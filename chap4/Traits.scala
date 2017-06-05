@@ -10,9 +10,9 @@ trait Shape {
 
 
 // 2. Define a trait Square that extends the trait Shape, provide a default implementation for the abstract method “area”
-trait Square with Shape {
+trait Square extends Shape {
 	val sides: Int = 4  // 3. Define a constant value in your trait for number of sides.
-	def area(x: Int, y = 0) = x*x
+	def area(x: Int, y:Int = 0) = x*x
 }
 
 
@@ -33,11 +33,13 @@ class GreetingCard extends Shape with Square {
 
 
 // 6. Create an array of Shape which includes PostCard, GreetingCard
-val shapes: Array[Shape] = new Array[Shape](2)
-shapes(0) = new PostCard
-shapes(1) = new GreetingCard
-
-
+object Traits {
+def method1() = {
+  val shapes: Array[Shape] = Array[Shape]()
+  shapes(0) = new PostCard
+  shapes(1) = new GreetingCard
+}
+}
 
 
 
